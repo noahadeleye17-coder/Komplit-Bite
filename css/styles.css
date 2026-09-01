@@ -194,7 +194,8 @@ a { color: inherit; }
 }
 .hero-eyebrow {
   color: var(--orange-deep);
-  font-weight: 600;
+  font-size: 1.35rem;
+  font-weight: 700;
   letter-spacing: 0.02em;
   margin-bottom: 0.75rem;
 }
@@ -203,7 +204,7 @@ a { color: inherit; }
   font-weight: 600;
 }
 .hero h1 .accent { color: var(--orange); }
-.hero-sub { font-size: 1.05rem; color: var(--brown-soft); }
+.hero-sub { font-size: 1.05rem; font-weight: 600; color: var(--brown-soft); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
 .hero-media {
   display: flex;
@@ -224,13 +225,18 @@ a { color: inherit; }
   /* Product photo becomes a subtle full-bleed background behind the
      copy instead of a standalone image above/below the text. */
   .hero {
-    position: relative;
-    background-image:
-      linear-gradient(180deg, rgba(253, 248, 240, 0.94) 0%, rgba(253, 248, 240, 0.9) 55%, rgba(253, 248, 240, 0.97) 100%),
-      url("../assets/images/product-bread.jpg");
-    background-size: cover;
-    background-position: center;
-  }
+  position: relative;
+  background-image:
+    radial-gradient(
+      ellipse 90% 70% at 50% 38%,
+      rgba(253, 248, 240, 0.92) 0%,
+      rgba(253, 248, 240, 0.75) 45%,
+      rgba(253, 248, 240, 0.35) 100%
+    ),
+    url("../assets/images/product-bread.jpg");
+  background-size: cover;
+  background-position: center;
+}
   .hero-media { display: none; }
 }
 
