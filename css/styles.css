@@ -220,7 +220,18 @@ a { color: inherit; }
 @media (max-width: 860px) {
   .hero-inner { grid-template-columns: 1fr; text-align: center; }
   .hero-actions { justify-content: center; }
-  .hero-media { order: -1; }
+
+  /* Product photo becomes a subtle full-bleed background behind the
+     copy instead of a standalone image above/below the text. */
+  .hero {
+    position: relative;
+    background-image:
+      linear-gradient(180deg, rgba(253, 248, 240, 0.94) 0%, rgba(253, 248, 240, 0.9) 55%, rgba(253, 248, 240, 0.97) 100%),
+      url("../assets/images/product-bread.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-media { display: none; }
 }
 
 /* ============ About ============ */
