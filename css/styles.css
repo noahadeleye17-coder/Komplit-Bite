@@ -184,14 +184,7 @@ a { color: inherit; }
 .chevron-divider--footer svg { height: 24px; }
 
 /* ============ Hero ============ */
-.hero {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  background: var(--cream);
-  padding-top: 3.5rem;
-  overflow: hidden;
-}
+.hero { background: var(--cream); padding-top: 3.5rem; overflow: hidden; }
 .hero-inner {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -248,13 +241,7 @@ a { color: inherit; }
 }
 
 /* ============ About ============ */
-.about {
-  position: relative;
-  z-index: 2;
-  background: var(--cream);
-  border-radius: 28px 28px 0 0;
-  padding: 5rem 0;
-}
+.about { padding: 5rem 0; }
 .about-inner {
   display: grid;
   grid-template-columns: 0.7fr 1.3fr;
