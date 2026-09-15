@@ -11,11 +11,13 @@ if (navToggle && mainNav) {
   const closeNav = () => {
     mainNav.classList.remove('is-open');
     navToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('has-open-nav');
   };
 
   navToggle.addEventListener('click', () => {
     const isOpen = mainNav.classList.toggle('is-open');
     navToggle.setAttribute('aria-expanded', String(isOpen));
+    document.body.classList.toggle('has-open-nav', isOpen);
   });
 
   mainNav.querySelectorAll('a').forEach((link) => {
@@ -32,66 +34,6 @@ if (navToggle && mainNav) {
     if (event.key === 'Escape') closeNav();
   });
 }
-
-// ============ 360 product spinner ============
-// Drag left/right to "rotate" the product. Pass multiple frame images via the
-// data-frames attribute (a JSON array of image paths, ordered around the turn)
-// to get a true frame-by-frame 360 spin. With a single frame (the current
-// default, since we only have one clean product photo to work with) it falls
-// back to a light tilt/parallax so the interaction still feels alive — swap
-// in a real photo sequence any time and the spin will pick it up automatically.
-document.querySelectorAll('[data-spinner]').forEach((spinner) => {
-  const img = spinner.querySelector('[data-spinner-img]');
-  const hint = spinner.querySelector('[data-spinner-hint]');
-  let frames = [];
-  try {
-    frames = JSON.parse(spinner.dataset.frames || '[]');
-  } catch (e) {
-    frames = [];
-  }
-
-  let dragging = false;
-  let startX = 0;
-  let currentFrame = 0;
-  const degreesPerFrame = frames.length > 1 ? 360 / frames.length : 0;
-
-  const setFrameFromDelta = (deltaX) => {
-    if (frames.length > 1) {
-      const framesMoved = Math.round(deltaX / 12);
-      let idx = (currentFrame + framesMoved) % frames.length;
-      if (idx < 0) idx += frames.length;
-      img.src = frames[idx];
-    } else {
-      // Single-frame fallback: subtle 3D tilt to hint at rotation.
-      const tilt = Math.max(-14, Math.min(14, deltaX / 8));
-      img.style.transform = `perspective(600px) rotateY(${tilt}deg)`;
-    }
-  };
-
-  const start = (x) => {
-    dragging = true;
-    startX = x;
-    if (hint) hint.classList.add('is-hidden');
-    spinner.style.cursor = 'grabbing';
-  };
-  const move = (x) => {
-    if (!dragging) return;
-    setFrameFromDelta(x - startX);
-  };
-  const end = () => {
-    if (!dragging) return;
-    dragging = false;
-    spinner.style.cursor = 'grab';
-    if (frames.length <= 1) {
-      img.style.transform = '';
-    }
-  };
-
-  spinner.addEventListener('pointerdown', (e) => start(e.clientX));
-  window.addEventListener('pointermove', (e) => move(e.clientX));
-  window.addEventListener('pointerup', end);
-  spinner.addEventListener('pointerleave', end);
-});
 
 // ============ Reviews carousel ============
 document.querySelectorAll('[data-carousel]').forEach((carousel) => {
@@ -137,18 +79,3 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
   render();
   resetTimer();
 });
-
-// ============ Contact form (mailto handoff) ============
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = contactForm.name.value.trim();
-    const message = contactForm.message.value.trim();
-    const subject = encodeURIComponent(`Website enquiry from ${name}`);
-    const body = encodeURIComponent(message);
-    window.location.href = `mailto:hello@komplitbite.example?subject=${subject}&body=${body}`;
-    const note = contactForm.querySelector('[data-form-note]');
-    if (note) note.hidden = false;
-  });
-}

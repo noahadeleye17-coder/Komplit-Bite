@@ -28,9 +28,10 @@
       <a href="#products">Products</a>
       <a href="#values">Reviews</a>
       <a href="#contact">Contact</a>
+      <a class="mobile-order-link" href="https://wa.me/2348023868036?text=Hello%20Komplit%20Bite%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">Order now</a>
     </nav>
 
-    <a class="btn btn-primary nav-cta" href="https://wa.me/2348023868036" target="_blank" rel="noopener">Order on WhatsApp</a>
+    <a class="btn btn-primary nav-cta" href="https://wa.me/2348023868036?text=Hello%20Komplit%20Bite%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">Order on WhatsApp</a>
 
     <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
@@ -45,10 +46,10 @@
     <div class="wrap hero-inner">
       <div class="hero-copy">
         <p class="hero-eyebrow">Complete Baked Confectioneries</p>
-        <h1>Rich taste, heavy weight, <span class="accent">honest bread.</span></h1>
-        <p class="hero-sub">Every loaf of Komplit Bite is baked with natural whole wheat flour, real butter and no shortcuts: fuel for your body, not just a snack.</p>
+        <h1>Soft, hearty bread baked with <span class="accent">honest ingredients.</span></h1>
+        <p class="hero-sub">Fresh daily in Lagos with whole wheat flour, real butter, natural yeast and no artificial shortcuts.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://wa.me/2348023868036" target="_blank" rel="noopener">Order on WhatsApp</a>
+          <a class="btn btn-primary" href="https://wa.me/2348023868036?text=Hello%20Komplit%20Bite%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">Order on WhatsApp</a>
           <a class="btn btn-ghost" href="#products">See our products</a>
         </div>
         <ul class="hero-trust">
@@ -73,6 +74,15 @@
   </section>
 
   <div class="page-content">
+
+  <!-- ============ TRUST STRIP ============ -->
+  <section class="trust-strip" aria-label="Komplit Bite promise">
+    <div class="wrap trust-strip-inner">
+      <p><strong>Fresh daily</strong><span>Baked every morning</span></p>
+      <p><strong>Natural ingredients</strong><span>No artificial shortcuts</span></p>
+      <p><strong>Lagos pickup & delivery</strong><span>Order quickly on WhatsApp</span></p>
+    </div>
+  </section>
 
   <!-- ============ ABOUT ============ -->
   <section class="about" id="about">
@@ -100,23 +110,18 @@
       <div class="section-head">
         <p class="section-eyebrow">Fresh daily</p>
         <h2>What we bake</h2>
-        <p>A taste in every bite. Spin the bread to see it from every side.</p>
+        <p>A taste in every bite. Choose your favorite and order straight on WhatsApp.</p>
       </div>
 
       <div class="product-grid">
         <!-- Featured product with 360 spin -->
         <article class="product-card product-card--featured">
           <span class="featured-tag">Bestseller</span>
-          <div class="spinner" data-spinner data-frames='["assets/images/product-bread.jpg"]'>
-            <img src="assets/images/product-bread.jpg" alt="Komplit Bite Bread, rotatable view" data-spinner-img draggable="false">
-            <div class="spinner-hint" data-spinner-hint>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 12a9 9 0 1 1-3-6.7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 3v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Drag to spin
-            </div>
-          </div>
+          <img src="assets/images/product-bread.jpg" alt="Komplit Bite whole wheat bread">
           <div class="product-body">
             <h3>Komplit Bite Bread</h3>
             <p>Soft, fibre-rich whole wheat bread made with real butter for sustained energy and better digestion. Nothing artificial, ever.</p>
+            <a class="product-link" href="https://wa.me/2348023868036?text=Hello%20Komplit%20Bite%2C%20I%27d%20like%20to%20order%20Komplit%20Bite%20Bread." target="_blank" rel="noopener">Order this</a>
           </div>
         </article>
 
@@ -125,6 +130,7 @@
           <div class="product-body">
             <h3>Coconut Bread</h3>
             <p>Our classic loaf with a natural coconut twist: a little sweeter, just as wholesome.</p>
+            <a class="product-link" href="https://wa.me/2348023868036?text=Hello%20Komplit%20Bite%2C%20I%27d%20like%20to%20order%20Coconut%20Bread." target="_blank" rel="noopener">Order this</a>
           </div>
         </article>
 
@@ -133,6 +139,7 @@
           <div class="product-body">
             <h3>Crunchy Chin-Chin</h3>
             <p>100% natural and proudly Nigerian: golden, crunchy, and made for sharing.</p>
+            <a class="product-link" href="https://wa.me/2348023868036?text=Hello%20Komplit%20Bite%2C%20I%27d%20like%20to%20order%20Crunchy%20Chin-Chin." target="_blank" rel="noopener">Order this</a>
           </div>
         </article>
       </div>
@@ -208,14 +215,11 @@
         </p>
         <a class="btn btn-primary" href="https://wa.me/2348023868036" target="_blank" rel="noopener">Chat on WhatsApp</a>
 
-        <form class="contact-form" id="contact-form">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-          <button type="submit" class="btn btn-ghost">Send message</button>
-          <p class="form-note" data-form-note hidden>Thanks — this opens your email app to send the message to us.</p>
-        </form>
+        <div class="order-panel">
+          <p class="order-panel-title">Ordering is fastest on WhatsApp.</p>
+          <p>Send us what you want, your quantity and your pickup or delivery location. We will confirm availability and timing.</p>
+          <a class="btn btn-ghost" href="https://wa.me/2348023868036?text=Hello%20Komplit%20Bite%2C%20I%27d%20like%20to%20place%20an%20order.%20Here%27s%20what%20I%20want%3A" target="_blank" rel="noopener">Start an order</a>
+        </div>
       </div>
       <div class="contact-map">
         <iframe
@@ -248,13 +252,14 @@
     </nav>
     <div class="footer-social">
       <a href="https://wa.me/2348023868036" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
-      <a href="#" aria-label="Instagram">Instagram</a>
     </div>
   </div>
   <p class="footer-copy">&copy; <span data-year></span> Complete Baked Confectioneries. All rights reserved.</p>
 </footer>
 
   </div>
+
+<a class="floating-whatsapp" href="https://wa.me/2348023868036?text=Hello%20Komplit%20Bite%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener" aria-label="Order on WhatsApp">WhatsApp</a>
 
 <script src="js/main.js"></script>
 </body>
