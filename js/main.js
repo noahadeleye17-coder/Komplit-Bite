@@ -38,16 +38,23 @@ if (navToggle && mainNav) {
 // ============ Reviews carousel ============
 document.querySelectorAll('[data-carousel]').forEach((carousel) => {
   const track = carousel.querySelector('[data-carousel-track]');
-  const slides = Array.from(track.children);
   const prevBtn = carousel.querySelector('[data-carousel-prev]');
   const nextBtn = carousel.querySelector('[data-carousel-next]');
   const dotsWrap = carousel.querySelector('[data-carousel-dots]');
+
+  if (!track || !prevBtn || !nextBtn || !dotsWrap) return;
+
+  const slides = Array.from(track.children);
+  if (!slides.length) return;
+
   let index = 0;
   let timer = null;
 
   slides.forEach((_, i) => {
     const dot = document.createElement('button');
+    dot.type = 'button';
     dot.setAttribute('aria-label', `Go to review ${i + 1}`);
+    dot.setAttribute('aria-current', i === 0 ? 'true' : 'false');
     if (i === 0) dot.classList.add('is-active');
     dot.addEventListener('click', () => goTo(i));
     dotsWrap.appendChild(dot);
@@ -56,7 +63,10 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
 
   function render() {
     track.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+    dots.forEach((d, i) => {
+      d.classList.toggle('is-active', i === index);
+      d.setAttribute('aria-current', i === index ? 'true' : 'false');
+    });
   }
 
   function goTo(i) {
