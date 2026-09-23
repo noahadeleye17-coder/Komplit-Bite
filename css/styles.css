@@ -299,6 +299,10 @@ a { color: inherit; }
   z-index: 1;
   max-width: 390px;
   width: 100%;
+  height: auto;
+  aspect-ratio: 453 / 960;
+  object-fit: cover;
+  object-position: center;
   border-radius: 18px;
   box-shadow: var(--shadow);
   transform: rotate(-2deg);
