@@ -376,7 +376,7 @@ a { color: inherit; }
   .hero-visual img {
     width: min(78vw, 520px);
     opacity: 1;
-    transform: rotate(-6deg) translateY(-2%);
+    transform: rotate(-6deg) translateY(-5%);
   }
 }
 
